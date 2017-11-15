@@ -1,0 +1,38 @@
+#!/bin/bash
+cd `dirname $0`
+lw_except(){
+    /usr/bin/expect <<-EOF
+set timeout 10
+spawn ssh $1
+expect "*password:"
+send "$2\r"
+expect "*#"
+interact
+EOF
+}
+
+
+
+lw_ssh(){
+    conf=`grep "^\$1\b" ../data/test.conf`
+    
+    if test -n "$conf"
+    then
+    one=($conf)
+    lw_except ${one[2]}"@"${one[1]} ${one[3]}
+    else
+        echo 'no found option !'
+    fi
+
+}
+
+case $1 in
+    help)
+        echo "help";;
+    -help)
+        echo "help";;
+    [a-z]*)
+        lw_ssh $1;;
+        
+esac
+
