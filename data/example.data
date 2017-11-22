@@ -1,0 +1,11 @@
+#This file is for storing basic service data
+#
+#Alias Host Username Password Type
+#
+#Alias : just a easy to remember name or service alias name
+#Host : service host
+#Username : your username
+#Password : your password
+#Type : login server type. You can write ‘pwd’ or 'key'. 'pwd' means login to the server by password and 'key' meads login by Public key
+
+location 127.0.0.1 jobs apple123 pwd

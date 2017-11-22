@@ -1,5 +1,6 @@
 #!/bin/bash
-cd `dirname $0`
+DIR=`S=\`readlink "$0"\`; [ -z "$S" ] && S=$0; dirname $S`
+cd $DIR
 lw_except(){
     /usr/bin/expect -c "
 set timeout 10
