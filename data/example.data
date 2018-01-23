@@ -8,4 +8,5 @@
 #Password : your password
 #Type : login server type. You can write ‘pwd’ or 'key'. 'pwd' means login to the server by password and 'key' meads login by Public key
 
-location 127.0.0.1 jobs apple123 pwd
+location1 127.0.0.1 root apple123 pwd
+location2 myname - 123456 key
